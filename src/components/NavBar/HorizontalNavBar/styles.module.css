@@ -22,8 +22,8 @@
 }
 .horizontal-nav-bar-container .logo-container .logo {
   flex: none;
-  width: 2.5rem;
-  height: 2.5rem;
+  width: 4rem;
+  height: 4rem;
   object-position: center;
   object-fit: contain;
   opacity: 0.9;

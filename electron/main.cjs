@@ -1,6 +1,6 @@
 const path = require('node:path');
 const { pathToFileURL } = require('node:url');
-const { app, BrowserWindow, ipcMain, shell } = require('electron');
+const { app, BrowserWindow, ipcMain, nativeImage, shell } = require('electron');
 
 const isDev = typeof process.env.ELECTRON_RENDERER_URL === 'string' && process.env.ELECTRON_RENDERER_URL.length > 0;
 
@@ -10,6 +10,22 @@ function getRendererUrl() {
     }
 
     return pathToFileURL(path.join(__dirname, '..', 'build', 'index.html')).toString();
+}
+
+function getAppIconPath() {
+    if (process.platform === 'darwin') {
+        return path.join(__dirname, '..', 'public', 'assets', 'icons', 'mac', 'icon.icns');
+    }
+
+    return path.join(__dirname, '..', 'public', 'assets', 'images', 'icon_512x512.png');
+}
+
+function getDockIconPath() {
+    if (process.platform === 'darwin') {
+        return path.join(__dirname, '..', 'public', 'assets', 'icons', 'mac', 'icon.png');
+    }
+
+    return getAppIconPath();
 }
 
 function createWindow() {
@@ -22,6 +38,9 @@ function createWindow() {
         autoHideMenuBar: true,
         show: false,
         title: 'Wasser',
+        ...(process.platform !== 'darwin' ? {
+            icon: getAppIconPath(),
+        } : {}),
         ...(process.platform === 'darwin' ? {
             titleBarStyle: 'hiddenInset',
         } : {}),
@@ -72,6 +91,14 @@ function createWindow() {
 }
 
 app.whenReady().then(() => {
+    if (process.platform === 'darwin') {
+        const dockIcon = nativeImage.createFromPath(getDockIconPath());
+
+        if (!dockIcon.isEmpty()) {
+            app.dock.setIcon(dockIcon);
+        }
+    }
+
     ipcMain.handle('shell:openExternal', (_event, url) => {
         if (typeof url !== 'string' || url.length === 0) {
             return false;

@@ -103,14 +103,14 @@
                 "dmg",
                 "zip"
             ],
-            "icon": "public/assets/images/icon_512x512.png"
+            "icon": "public/assets/icons/mac/icon.icns"
         },
         "win": {
             "target": [
                 "nsis",
                 "zip"
             ],
-            "icon": "public/assets/images/icon_512x512.png"
+            "icon": "public/assets/icons/win/icon.png"
         },
         "linux": {
             "target": [
