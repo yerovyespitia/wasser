@@ -69,9 +69,6 @@ const NavMenuContent = ({ onClick }) => {
                     <div className={styles['email-container']}>
                         <div className={styles['email-label']}>{profile.auth === null ? t('ANONYMOUS_USER') : profile.auth.user.email}</div>
                     </div>
-                    <Button className={styles['logout-button-container']} title={profile.auth === null ? `${t('LOG_IN')} / ${t('SIGN_UP')}` : t('LOG_OUT')} href={profile.auth === null ? '#/intro' : null} onClick={profile.auth !== null ? logoutButtonOnClick : null}>
-                        <div className={styles['logout-label']}>{profile.auth === null ? `${t('LOG_IN')} / ${t('SIGN_UP')}` : t('LOG_OUT')}</div>
-                    </Button>
                 </div>
             </div>
             <div className={styles['nav-menu-section']}>
@@ -93,20 +90,16 @@ const NavMenuContent = ({ onClick }) => {
                 </Button>
             </div>
             <div className={styles['nav-menu-section']}>
-                <Button className={styles['nav-menu-option-container']} title={ t('TERMS_OF_SERVICE') } href={'https://www.stremio.com/tos'} target={'_blank'}>
-                    <div className={styles['nav-menu-option-label']}>{ t('TERMS_OF_SERVICE') }</div>
+                <Button
+                    className={styles['nav-menu-option-container']}
+                    title={profile.auth === null ? `${t('LOG_IN')} / ${t('SIGN_UP')}` : t('LOG_OUT')}
+                    href={profile.auth === null ? '#/intro' : null}
+                    onClick={profile.auth !== null ? logoutButtonOnClick : null}
+                >
+                    <div className={styles['nav-menu-option-label']}>
+                        {profile.auth === null ? `${t('LOG_IN')} / ${t('SIGN_UP')}` : t('LOG_OUT')}
+                    </div>
                 </Button>
-                <Button className={styles['nav-menu-option-container']} title={ t('PRIVACY_POLICY') } href={'https://www.stremio.com/privacy'} target={'_blank'}>
-                    <div className={styles['nav-menu-option-label']}>{ t('PRIVACY_POLICY') }</div>
-                </Button>
-                {
-                    profile.auth !== null ?
-                        <Button className={styles['nav-menu-option-container']} title={ t('USER_PANEL') } href={'https://www.stremio.com/acc-settings'} target={'_blank'}>
-                            <div className={styles['nav-menu-option-label']}>{ t('USER_PANEL') }</div>
-                        </Button>
-                        :
-                        null
-                }
             </div>
         </div>
     );

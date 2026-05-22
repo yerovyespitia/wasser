@@ -47,23 +47,6 @@
   flex: 1;
   color: var(--primary-foreground-color);
 }
-.nav-menu-container .user-info-container .user-info-details .logout-button-container {
-  flex: none;
-}
-.nav-menu-container .user-info-container .user-info-details .logout-button-container:hover,
-.nav-menu-container .user-info-container .user-info-details .logout-button-container:focus {
-  outline: none;
-}
-.nav-menu-container .user-info-container .user-info-details .logout-button-container:hover .logout-label,
-.nav-menu-container .user-info-container .user-info-details .logout-button-container:focus .logout-label {
-  text-decoration: underline;
-}
-.nav-menu-container .user-info-container .user-info-details .logout-button-container .logout-label {
-  flex: 1;
-  font-size: 0.9rem;
-  font-weight: 500;
-  color: var(--primary-foreground-color);
-}
 .nav-menu-container .nav-menu-section {
   border-top: thin solid var(--overlay-color);
 }

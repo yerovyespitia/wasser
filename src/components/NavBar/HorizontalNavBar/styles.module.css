@@ -85,6 +85,14 @@
   color: var(--primary-foreground-color);
   opacity: 0.6;
 }
+.horizontal-nav-bar-container .button-container .avatar {
+  flex: none;
+  width: 3.1rem;
+  height: 3.1rem;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+}
 .horizontal-nav-bar-container .button-container.back-button-container .icon,
 .horizontal-nav-bar-container .button-container.menu-button-container .icon,
 .horizontal-nav-bar-container .button-container.back-button-container:global(.active) .icon,

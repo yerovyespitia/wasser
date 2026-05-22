@@ -25,21 +25,26 @@ const SearchBar = React.memo(({ className, query, active }) => {
 
     const [historyOpen, openHistory, closeHistory, ] = useBinaryState(query === null ? true : false);
     const [currentQuery, setCurrentQuery] = React.useState(query || '');
+    const [expanded, setExpanded] = React.useState(active);
 
     const searchInputRef = React.useRef(null);
     const containerRef = React.useRef(null);
 
     const searchBarOnClick = React.useCallback(() => {
         if (!active) {
-            window.location = '#/search';
+            setExpanded(true);
+            openHistory();
         }
-    }, [active]);
+    }, [active, openHistory]);
 
     const searchHistoryOnClose = React.useCallback((event) => {
         if (historyOpen && containerRef.current && !containerRef.current.contains(event.target)) {
             closeHistory();
         }
-    }, [historyOpen]);
+        if (!active && expanded && containerRef.current && !containerRef.current.contains(event.target)) {
+            setExpanded(false);
+        }
+    }, [active, expanded, historyOpen, closeHistory]);
 
     React.useEffect(() => {
         document.addEventListener('mousedown', searchHistoryOnClose);
@@ -52,7 +57,7 @@ const SearchBar = React.memo(({ className, query, active }) => {
         const value = searchInputRef.current.value;
         setCurrentQuery(value);
         openHistory();
-    }, []);
+    }, [openHistory]);
 
     const queryInputOnPaste = React.useCallback((event) => {
         const pasted = event.clipboardData.getData('text');
@@ -63,9 +68,15 @@ const SearchBar = React.memo(({ className, query, active }) => {
 
     const queryInputOnSubmit = React.useCallback((event) => {
         event.preventDefault();
-        const searchValue = `/search?search=${encodeURIComponent(event.target.value)}`;
-        setCurrentQuery(searchValue);
-        if (searchInputRef.current && searchValue) {
+        const submittedQuery = event.target.value.trim();
+
+        if (!submittedQuery) {
+            return;
+        }
+
+        const searchValue = `/search?search=${encodeURIComponent(submittedQuery)}`;
+        setCurrentQuery(submittedQuery);
+        if (searchInputRef.current) {
             window.location.hash = searchValue;
             closeHistory();
         }
@@ -74,8 +85,14 @@ const SearchBar = React.memo(({ className, query, active }) => {
     const queryInputClear = React.useCallback(() => {
         searchInputRef.current.value = '';
         setCurrentQuery('');
-        window.location.hash = '/search';
-    }, []);
+        if (active) {
+            window.location.hash = '/search';
+            return;
+        }
+
+        setExpanded(false);
+        closeHistory();
+    }, [active, closeHistory]);
 
     const updateLocalSearchDebounced = React.useCallback(debounce((query) => {
         localSearch.search(query);
@@ -86,10 +103,18 @@ const SearchBar = React.memo(({ className, query, active }) => {
     }, [currentQuery]);
 
     React.useEffect(() => {
-        if (routeFocused && active) {
+        if (routeFocused && (active || expanded)) {
             searchInputRef.current.focus();
         }
-    }, [routeFocused, active]);
+    }, [routeFocused, active, expanded]);
+
+    React.useEffect(() => {
+        setExpanded(active);
+    }, [active]);
+
+    React.useEffect(() => {
+        setCurrentQuery(query || '');
+    }, [query]);
 
     React.useEffect(() => {
         return () => {
@@ -100,7 +125,7 @@ const SearchBar = React.memo(({ className, query, active }) => {
     return (
         <div className={classnames(className, styles['search-bar-container'], { 'active': active })} onClick={searchBarOnClick} ref={containerRef}>
             {
-                active ?
+                active || expanded ?
                     <TextInput
                         key={query}
                         ref={searchInputRef}
