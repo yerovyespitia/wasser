@@ -4,9 +4,9 @@ const React = require('react');
 const PropTypes = require('prop-types');
 const classnames = require('classnames');
 const debounce = require('lodash.debounce');
-const { useRouteFocused } = require('ethos-router');
-const { useBinaryState } = require('ethos/common');
-const { Button, Slider } = require('ethos/components');
+const { useRouteFocused } = require('wasser-router');
+const { useBinaryState } = require('wasser/common');
+const { Button, Slider } = require('wasser/components');
 const formatTime = require('./formatTime');
 const styles = require('./styles.module.css');
 

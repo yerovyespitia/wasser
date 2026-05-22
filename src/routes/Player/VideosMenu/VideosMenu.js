@@ -3,9 +3,9 @@
 const React = require('react');
 const PropTypes = require('prop-types');
 const classnames = require('classnames');
-const { getNewEpisodeVideoId } = require('ethos/common');
-const { useServices } = require('ethos/services');
-const { Video } = require('ethos/components');
+const { getNewEpisodeVideoId } = require('wasser/common');
+const { useServices } = require('wasser/services');
+const { Video } = require('wasser/components');
 const styles = require('./styles.module.css');
 
 const VideosMenu = ({ className, metaItem, seriesInfo }) => {

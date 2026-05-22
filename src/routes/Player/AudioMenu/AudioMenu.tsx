@@ -1,8 +1,8 @@
 import React, { forwardRef, memo, MouseEvent, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import classNames from 'classnames';
-import { languages } from 'ethos/common';
-import { Button } from 'ethos/components';
+import { languages } from 'wasser/common';
+import { Button } from 'wasser/components';
 import styles from './AudioMenu.module.css';
 
 type Props = {

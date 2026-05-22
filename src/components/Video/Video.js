@@ -4,11 +4,11 @@ const React = require('react');
 const { useTranslation } = require('react-i18next');
 const PropTypes = require('prop-types');
 const classnames = require('classnames');
-const { useRouteFocused } = require('ethos-router');
+const { useRouteFocused } = require('wasser-router');
 const Icon = require('@stremio/stremio-icons/react');
-const { Button, Image, Popup } = require('ethos/components');
-const useBinaryState = require('ethos/common/useBinaryState');
-const useProfile = require('ethos/common/useProfile');
+const { Button, Image, Popup } = require('wasser/components');
+const useBinaryState = require('wasser/common/useBinaryState');
+const useProfile = require('wasser/common/useProfile');
 const VideoPlaceholder = require('./VideoPlaceholder');
 const styles = require('./styles.module.css');
 

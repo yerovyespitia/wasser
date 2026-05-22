@@ -1,7 +1,7 @@
 // Copyright (C) 2017-2023 Smart code 203358507
 
 const React = require('react');
-const { withCoreSuspender, useStreamingServer } = require('ethos/common');
+const { withCoreSuspender, useStreamingServer } = require('wasser/common');
 
 const DeepLinkHandler = () => {
     const streamingServer = useStreamingServer();

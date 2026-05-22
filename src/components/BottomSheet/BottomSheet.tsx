@@ -3,8 +3,8 @@
 import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import classNames from 'classnames';
-import useBinaryState from 'ethos/common/useBinaryState';
-import useOrientation from 'ethos/common/useOrientation';
+import useBinaryState from 'wasser/common/useBinaryState';
+import useOrientation from 'wasser/common/useOrientation';
 import styles from './BottomSheet.module.css';
 
 const CLOSE_THRESHOLD = 100;

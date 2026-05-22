@@ -2,7 +2,7 @@
 
 import React, { memo } from 'react';
 import classnames from 'classnames';
-import { VerticalNavBar, HorizontalNavBar } from 'ethos/components/NavBar';
+import { VerticalNavBar, HorizontalNavBar } from 'wasser/components/NavBar';
 import styles from './MainNavBars.module.css';
 
 const TABS = [

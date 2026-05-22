@@ -3,9 +3,9 @@ declare module '*.module.css' {
     export = resource;
 }
 
-declare module 'ethos-router';
-declare module 'ethos/components/NavBar';
-declare module 'ethos/components/ModalDialog';
+declare module 'wasser-router';
+declare module 'wasser/components/NavBar';
+declare module 'wasser/components/ModalDialog';
 
 declare const __APP_VERSION__: string;
 declare const __APP_COMMIT_HASH__: string;

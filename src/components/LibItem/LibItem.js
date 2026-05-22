@@ -1,9 +1,9 @@
 // Copyright (C) 2017-2023 Smart code 203358507
 
 const React = require('react');
-const { useServices } = require('ethos/services');
+const { useServices } = require('wasser/services');
 const PropTypes = require('prop-types');
-const MetaItem = require('ethos/components/MetaItem');
+const MetaItem = require('wasser/components/MetaItem');
 const { t } = require('i18next');
 
 const LibItem = ({ _id, removable, notifications, watched, ...props }) => {

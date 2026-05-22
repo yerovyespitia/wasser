@@ -2,7 +2,7 @@
 
 const React = require('react');
 const PropTypes = require('prop-types');
-const { TextInput } = require('ethos/components');
+const { TextInput } = require('wasser/components');
 
 const CredentialsTextInput = React.forwardRef((props, ref) => {
     const onKeyDown = React.useCallback((event) => {

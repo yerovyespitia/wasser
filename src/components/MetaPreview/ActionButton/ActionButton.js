@@ -4,9 +4,9 @@ const React = require('react');
 const PropTypes = require('prop-types');
 const classnames = require('classnames');
 const Icon = require('@stremio/stremio-icons/react');
-const { Button } = require('ethos/components');
+const { Button } = require('wasser/components');
 const styles = require('./styles.module.css');
-const { Tooltip } = require('ethos/common/Tooltips');
+const { Tooltip } = require('wasser/common/Tooltips');
 
 const ActionButton = ({ className, icon, label, tooltip, ...props }) => {
     return (

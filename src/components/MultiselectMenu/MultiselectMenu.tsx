@@ -1,13 +1,13 @@
 // Copyright (C) 2017-2024 Smart code 203358507
 
 import React from 'react';
-import { Button } from 'ethos/components';
-import useBinaryState from 'ethos/common/useBinaryState';
+import { Button } from 'wasser/components';
+import useBinaryState from 'wasser/common/useBinaryState';
 import Dropdown from './Dropdown';
 import classNames from 'classnames';
 import Icon from '@stremio/stremio-icons/react';
 import styles from './MultiselectMenu.module.css';
-import useOutsideClick from 'ethos/common/useOutsideClick';
+import useOutsideClick from 'wasser/common/useOutsideClick';
 
 type Props = {
     className?: string,

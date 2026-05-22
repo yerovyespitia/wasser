@@ -1,8 +1,8 @@
 // Copyright (C) 2017-2023 Smart code 203358507
 
 const React = require('react');
-const { useServices } = require('ethos/services');
-const useModelState = require('ethos/common/useModelState');
+const { useServices } = require('wasser/services');
+const useModelState = require('wasser/common/useModelState');
 
 const useLocalSearch = () => {
     const { core } = useServices();

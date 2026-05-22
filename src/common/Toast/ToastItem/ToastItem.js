@@ -5,7 +5,7 @@ const { useTranslation } = require('react-i18next');
 const PropTypes = require('prop-types');
 const classnames = require('classnames');
 const Icon = require('@stremio/stremio-icons/react');
-const { Button } = require('ethos/components');
+const { Button } = require('wasser/components');
 const styles = require('./styles.module.css');
 
 const ToastItem = ({ title, message, dataset, onSelect, onClose, ...props }) => {

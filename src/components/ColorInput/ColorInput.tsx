@@ -4,9 +4,9 @@ import React, { useCallback, useLayoutEffect, useMemo, useState } from 'react';
 import classnames from 'classnames';
 import * as AColorPicker from 'a-color-picker';
 import { useTranslation } from 'react-i18next';
-import { Button } from 'ethos/components';
-import ModalDialog from 'ethos/components/ModalDialog';
-import useBinaryState from 'ethos/common/useBinaryState';
+import { Button } from 'wasser/components';
+import ModalDialog from 'wasser/components/ModalDialog';
+import useBinaryState from 'wasser/common/useBinaryState';
 import ColorPicker from './ColorPicker';
 import styles from './ColorInput.module.css';
 

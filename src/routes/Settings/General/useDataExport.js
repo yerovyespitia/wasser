@@ -1,8 +1,8 @@
 // Copyright (C) 2017-2023 Smart code 203358507
 
 const React = require('react');
-const { useServices } = require('ethos/services');
-const { useModelState } = require('ethos/common');
+const { useServices } = require('wasser/services');
+const { useModelState } = require('wasser/common');
 
 const map = (dataExport) => ({
     ...dataExport,

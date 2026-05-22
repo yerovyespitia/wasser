@@ -3,7 +3,7 @@
 import React, { ChangeEvent, useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import Icon from '@stremio/stremio-icons/react';
-import { Button, TextInput } from 'ethos/components';
+import { Button, TextInput } from 'wasser/components';
 import styles from './AddItem.module.css';
 
 type Props = {

@@ -1,9 +1,9 @@
 // Copyright (C) 2017-2024 Smart code 203358507
 
 import { useCallback } from 'react';
-import { useModelState, useToast } from 'ethos/common';
-import useProfile from 'ethos/common/useProfile';
-import { useServices } from 'ethos/services';
+import { useModelState, useToast } from 'wasser/common';
+import useProfile from 'wasser/common/useProfile';
+import { useServices } from 'wasser/services';
 
 const useStreamingServerUrls = () => {
     const { core } = useServices();

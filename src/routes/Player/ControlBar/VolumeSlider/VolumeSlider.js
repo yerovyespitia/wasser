@@ -4,9 +4,9 @@ const React = require('react');
 const PropTypes = require('prop-types');
 const classnames = require('classnames');
 const debounce = require('lodash.debounce');
-const { useRouteFocused } = require('ethos-router');
-const { useServices } = require('ethos/services');
-const { Slider } = require('ethos/components');
+const { useRouteFocused } = require('wasser-router');
+const { useServices } = require('wasser/services');
+const { Slider } = require('wasser/components');
 const styles = require('./styles.module.css');
 
 const VolumeSlider = ({ className, volume, onVolumeChangeRequested, muted }) => {

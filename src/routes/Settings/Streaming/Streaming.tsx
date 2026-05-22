@@ -1,8 +1,8 @@
 import React, { forwardRef, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import Icon from '@stremio/stremio-icons/react';
-import { Button, MultiselectMenu } from 'ethos/components';
-import { useToast } from 'ethos/common';
+import { Button, MultiselectMenu } from 'wasser/components';
+import { useToast } from 'wasser/common';
 import { Section, Option } from '../components';
 import URLsManager from './URLsManager';
 import useStreamingOptions from './useStreamingOptions';

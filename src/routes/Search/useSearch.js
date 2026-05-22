@@ -1,8 +1,8 @@
 // Copyright (C) 2017-2023 Smart code 203358507
 
 const React = require('react');
-const { useModelState } = require('ethos/common');
-const { useServices } = require('ethos/services');
+const { useModelState } = require('wasser/common');
+const { useServices } = require('wasser/services');
 
 const useSearch = (queryParams) => {
     const { core } = useServices();

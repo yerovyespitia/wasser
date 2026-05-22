@@ -5,7 +5,7 @@ const PropTypes = require('prop-types');
 const classnames = require('classnames');
 const { t } = require('i18next');
 const Icon = require('@stremio/stremio-icons/react');
-const { Button, MultiselectMenu } = require('ethos/components');
+const { Button, MultiselectMenu } = require('wasser/components');
 const SeasonsBarPlaceholder = require('./SeasonsBarPlaceholder');
 const styles = require('./styles.module.css');
 

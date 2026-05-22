@@ -6,11 +6,11 @@ const classnames = require('classnames');
 const { useTranslation } = require('react-i18next');
 const filterInvalidDOMProps = require('filter-invalid-dom-props').default;
 const Icon = require('@stremio/stremio-icons/react');
-const Button = require('ethos/components/Button');
-const Image = require('ethos/components/Image');
-const Multiselect = require('ethos/components/Multiselect');
-const useBinaryState = require('ethos/common/useBinaryState');
-const { ICON_FOR_TYPE } = require('ethos/common/CONSTANTS');
+const Button = require('wasser/components/Button');
+const Image = require('wasser/components/Image');
+const Multiselect = require('wasser/components/Multiselect');
+const useBinaryState = require('wasser/common/useBinaryState');
+const { ICON_FOR_TYPE } = require('wasser/common/CONSTANTS');
 const styles = require('./styles.module.css');
 
 const MetaItem = React.memo(({ className, type, name, poster, posterShape, posterChangeCursor, progress, newVideos, options, deepLinks, dataset, optionOnSelect, onDismissClick, onPlayClick, watched, titleAction, ...props }) => {

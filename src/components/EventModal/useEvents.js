@@ -1,7 +1,7 @@
 // Copyright (C) 2017-2023 Smart code 203358507
 
-const useModelState = require('ethos/common/useModelState');
-const { useServices } = require('ethos/services');
+const useModelState = require('wasser/common/useModelState');
+const { useServices } = require('wasser/services');
 
 const map = (ctx) => ({
     ...ctx.events,

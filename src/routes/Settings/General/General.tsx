@@ -1,9 +1,9 @@
 import React, { forwardRef, useCallback, useEffect, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Button } from 'ethos/components';
-import { useServices } from 'ethos/services';
-import { usePlatform, useToast } from 'ethos/common';
-import { commitHash } from 'ethos/common/buildInfo';
+import { Button } from 'wasser/components';
+import { useServices } from 'wasser/services';
+import { usePlatform, useToast } from 'wasser/common';
+import { commitHash } from 'wasser/common/buildInfo';
 import { Section, Option, Link } from '../components';
 import User from './User';
 import useDataExport from './useDataExport';
@@ -45,7 +45,7 @@ const General = forwardRef<HTMLDivElement, Props>(({ profile }: Props, ref) => {
                 t('SETTINGS_SUBSCRIBE_CALENDAR_TOAST'),
             timeout: 25000
         });
-        // Ethos 4 emits not documented event subscribeCalendar
+        // Wasser 4 emits not documented event subscribeCalendar
     }, [profile.auth]);
 
     const onToggleTrakt = useCallback(() => {

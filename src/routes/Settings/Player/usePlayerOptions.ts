@@ -1,7 +1,7 @@
 import { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { CONSTANTS, languageNames, useLanguageSorting, usePlatform } from 'ethos/common';
-import { useServices } from 'ethos/services';
+import { CONSTANTS, languageNames, useLanguageSorting, usePlatform } from 'wasser/common';
+import { useServices } from 'wasser/services';
 
 const LANGUAGES_NAMES: Record<string, string> = languageNames;
 

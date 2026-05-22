@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useRef } from 'react';
 import hat from 'hat';
-import { usePlatform } from 'ethos/common';
+import { usePlatform } from 'wasser/common';
 
 const STREMIO_URL = 'https://www.strem.io';
 const MAX_TRIES = 25;

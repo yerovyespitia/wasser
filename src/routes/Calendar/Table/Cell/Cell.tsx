@@ -3,7 +3,7 @@
 import React, { useCallback, useMemo, MouseEvent } from 'react';
 import Icon from '@stremio/stremio-icons/react';
 import classNames from 'classnames';
-import { Button, HorizontalScroll, Image } from 'ethos/components';
+import { Button, HorizontalScroll, Image } from 'wasser/components';
 import styles from './Cell.module.css';
 
 type Props = {

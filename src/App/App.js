@@ -3,10 +3,10 @@
 import 'spatial-navigation-polyfill';
 const React = require('react');
 const { useTranslation } = require('react-i18next');
-const { Router } = require('ethos-router');
-const { Core, Shell, Chromecast, DragAndDrop, KeyboardShortcuts, ServicesProvider } = require('ethos/services');
-const { NotFound } = require('ethos/routes');
-const { FileDropProvider, PlatformProvider, ToastProvider, TooltipProvider, ShortcutsProvider, CONSTANTS, withCoreSuspender, useShell, useBinaryState } = require('ethos/common');
+const { Router } = require('wasser-router');
+const { Core, Shell, Chromecast, DragAndDrop, KeyboardShortcuts, ServicesProvider } = require('wasser/services');
+const { NotFound } = require('wasser/routes');
+const { FileDropProvider, PlatformProvider, ToastProvider, TooltipProvider, ShortcutsProvider, CONSTANTS, withCoreSuspender, useShell, useBinaryState } = require('wasser/common');
 const ServicesToaster = require('./ServicesToaster');
 const DeepLinkHandler = require('./DeepLinkHandler');
 const SearchParamsHandler = require('./SearchParamsHandler');
@@ -15,7 +15,7 @@ const ShortcutsModal = require('./ShortcutsModal');
 const ErrorDialog = require('./ErrorDialog');
 const withProtectedRoutes = require('./withProtectedRoutes');
 const routerViewsConfig = require('./routerViewsConfig');
-const { appVersion } = require('ethos/common/buildInfo');
+const { appVersion } = require('wasser/common/buildInfo');
 const styles = require('./styles.module.css');
 
 const RouterWithProtectedRoutes = withCoreSuspender(withProtectedRoutes(Router));

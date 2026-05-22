@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useServices } from 'ethos/services';
-import { appVersion, commitHash } from 'ethos/common/buildInfo';
+import { useServices } from 'wasser/services';
+import { appVersion, commitHash } from 'wasser/common/buildInfo';
 import { Option, Section } from '../components';
 import styles from './Info.module.css';
 

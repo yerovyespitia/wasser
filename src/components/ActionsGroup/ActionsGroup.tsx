@@ -3,7 +3,7 @@
 import classNames from 'classnames';
 import React from 'react';
 import Icon from '@stremio/stremio-icons/react';
-import { Tooltip } from 'ethos/common/Tooltips';
+import { Tooltip } from 'wasser/common/Tooltips';
 import styles from './ActionsGroup.module.css';
 
 type Item = {

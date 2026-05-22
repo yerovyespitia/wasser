@@ -1,8 +1,8 @@
 // Copyright (C) 2017-2023 Smart code 203358507
 
 const React = require('react');
-const { Intro } = require('ethos/routes');
-const { useProfile } = require('ethos/common');
+const { Intro } = require('wasser/routes');
+const { useProfile } = require('wasser/common');
 
 const withProtectedRoutes = (Component) => {
     return function withProtectedRoutes(props) {

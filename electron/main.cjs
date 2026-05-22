@@ -21,7 +21,7 @@ function createWindow() {
         backgroundColor: '#0f1726',
         autoHideMenuBar: true,
         show: false,
-        title: 'Ethos',
+        title: 'Wasser',
         ...(process.platform === 'darwin' ? {
             titleBarStyle: 'hiddenInset',
         } : {}),

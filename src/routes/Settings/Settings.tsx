@@ -3,9 +3,9 @@
 import React, { useCallback, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import classnames from 'classnames';
 import throttle from 'lodash.throttle';
-import { useRouteFocused } from 'ethos-router';
-import { usePlatform, useProfile, useStreamingServer, withCoreSuspender } from 'ethos/common';
-import { MainNavBars } from 'ethos/components';
+import { useRouteFocused } from 'wasser-router';
+import { usePlatform, useProfile, useStreamingServer, withCoreSuspender } from 'wasser/common';
+import { MainNavBars } from 'wasser/components';
 import { SECTIONS } from './constants';
 import Menu from './Menu';
 import General from './General';

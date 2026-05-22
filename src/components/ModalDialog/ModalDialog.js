@@ -4,10 +4,10 @@ const React = require('react');
 const { useTranslation } = require('react-i18next');
 const PropTypes = require('prop-types');
 const classnames = require('classnames');
-const { useRouteFocused, useModalsContainer } = require('ethos-router');
-const Button = require('ethos/components/Button');
+const { useRouteFocused, useModalsContainer } = require('wasser-router');
+const Button = require('wasser/components/Button');
 const Icon = require('@stremio/stremio-icons/react');
-const { Modal } = require('ethos-router');
+const { Modal } = require('wasser-router');
 const styles = require('./styles.module.css');
 
 const ModalDialog = ({ className, title, buttons, children, dataset, onCloseRequest, background, ...props }) => {

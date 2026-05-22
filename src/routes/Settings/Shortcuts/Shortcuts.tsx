@@ -1,7 +1,7 @@
 import React, { forwardRef } from 'react';
 import { Section } from '../components';
-import { ShortcutsGroup } from 'ethos/components';
-import { useShortcuts } from 'ethos/common';
+import { ShortcutsGroup } from 'wasser/components';
+import { useShortcuts } from 'wasser/common';
 import styles from './Shortcuts.module.css';
 
 const Shortcuts = forwardRef<HTMLDivElement>((_, ref) => {

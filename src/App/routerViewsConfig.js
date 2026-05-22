@@ -1,7 +1,7 @@
 // Copyright (C) 2017-2023 Smart code 203358507
 
-const routes = require('ethos/routes');
-const { routesRegexp } = require('ethos/common');
+const routes = require('wasser/routes');
+const { routesRegexp } = require('wasser/common');
 
 const routerViewsConfig = [
     [

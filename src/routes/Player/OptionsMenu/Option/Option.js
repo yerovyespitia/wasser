@@ -4,7 +4,7 @@ const React = require('react');
 const PropTypes = require('prop-types');
 const classnames = require('classnames');
 const Icon = require('@stremio/stremio-icons/react');
-const { Button } = require('ethos/components');
+const { Button } = require('wasser/components');
 const styles = require('./styles.module.css');
 
 const Option = ({ icon, label, deviceId, disabled, onClick }) => {

@@ -1,6 +1,6 @@
 import React, { useCallback, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useServices } from 'ethos/services';
+import { useServices } from 'wasser/services';
 import { Link } from '../../components';
 import styles from './User.module.css';
 

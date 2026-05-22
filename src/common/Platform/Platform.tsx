@@ -1,5 +1,5 @@
 import React, { createContext, useContext } from 'react';
-import CONSTANTS = require('ethos/common/CONSTANTS');
+import CONSTANTS = require('wasser/common/CONSTANTS');
 import { name, isMobile } from './device';
 
 const { WHITELISTED_HOSTS } = CONSTANTS;

@@ -2,9 +2,9 @@
 
 const React = require('react');
 const magnet = require('magnet-uri');
-const { useServices } = require('ethos/services');
-const useToast = require('ethos/common/Toast/useToast');
-const useStreamingServer = require('ethos/common/useStreamingServer');
+const { useServices } = require('wasser/services');
+const useToast = require('wasser/common/Toast/useToast');
+const useStreamingServer = require('wasser/common/useStreamingServer');
 
 const CREATE_TORRENT_TIMEOUT = 20000;
 

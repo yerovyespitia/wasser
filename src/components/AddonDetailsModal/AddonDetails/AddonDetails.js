@@ -5,7 +5,7 @@ const { useTranslation } = require('react-i18next');
 const PropTypes = require('prop-types');
 const classnames = require('classnames');
 const Icon = require('@stremio/stremio-icons/react');
-const Image = require('ethos/components/Image');
+const Image = require('wasser/components/Image');
 const styles = require('./styles.module.css');
 
 const AddonDetails = ({ className, id, name, version, logo, description, types, transportUrl, official }) => {

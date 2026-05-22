@@ -1,9 +1,9 @@
 import React, { forwardRef } from 'react';
-import { ColorInput, MultiselectMenu, Toggle } from 'ethos/components';
-import { useServices } from 'ethos/services';
+import { ColorInput, MultiselectMenu, Toggle } from 'wasser/components';
+import { useServices } from 'wasser/services';
 import { Category, Option, Section } from '../components';
 import usePlayerOptions from './usePlayerOptions';
-import { usePlatform } from 'ethos/common';
+import { usePlatform } from 'wasser/common';
 
 type Props = {
     profile: Profile,

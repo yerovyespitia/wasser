@@ -1,7 +1,7 @@
 // Copyright (C) 2017-2023 Smart code 203358507
 
 const React = require('react');
-const { useTranslate } = require('ethos/common');
+const { useTranslate } = require('wasser/common');
 
 const mapSelectableInputs = (installedAddons, remoteAddons, t) => {
     const selectedCatalog = remoteAddons.selectable.catalogs.concat(installedAddons.selectable.catalogs).find(({ selected }) => selected);

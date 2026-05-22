@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
-import { interfaceLanguages, useLanguageSorting } from 'ethos/common';
-import { useServices } from 'ethos/services';
+import { interfaceLanguages, useLanguageSorting } from 'wasser/common';
+import { useServices } from 'wasser/services';
 
 const useInterfaceOptions = (profile: Profile) => {
     const { core } = useServices();

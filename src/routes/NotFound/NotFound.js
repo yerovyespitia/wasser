@@ -2,7 +2,7 @@
 
 const React = require('react');
 const { useTranslation } = require('react-i18next');
-const { HorizontalNavBar, Image } = require('ethos/components');
+const { HorizontalNavBar, Image } = require('wasser/components');
 const styles = require('./styles.module.css');
 
 const NotFound = () => {

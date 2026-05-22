@@ -4,7 +4,7 @@ const React = require('react');
 const PropTypes = require('prop-types');
 const classnames = require('classnames');
 const FocusLock = require('react-focus-lock').default;
-const { useRouteFocused } = require('ethos-router');
+const { useRouteFocused } = require('wasser-router');
 const styles = require('./styles.module.css');
 
 const getAnchorElement = (element) => {

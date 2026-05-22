@@ -27,7 +27,7 @@ export default defineConfig(({ mode }) => {
     return {
         plugins: [
             {
-                name: 'ethos-js-as-jsx',
+                name: 'wasser-js-as-jsx',
                 enforce: 'pre',
                 async transform(code, id) {
                     if (!id.includes('/src/') || !id.endsWith('.js')) {
@@ -79,8 +79,8 @@ export default defineConfig(({ mode }) => {
         ],
         resolve: {
             alias: {
-                ethos: path.resolve(__dirname, 'src'),
-                'ethos-router': path.resolve(__dirname, 'src/router'),
+                wasser: path.resolve(__dirname, 'src'),
+                'wasser-router': path.resolve(__dirname, 'src/router'),
             },
             extensions: ['.tsx', '.ts', '.jsx', '.js', '.json', '.css', '.wasm'],
         },

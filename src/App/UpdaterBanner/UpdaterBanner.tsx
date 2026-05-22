@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
 import Icon from '@stremio/stremio-icons/react';
 import { useTranslation } from 'react-i18next';
-import { useServices } from 'ethos/services';
-import { useBinaryState, useShell } from 'ethos/common';
-import { Button, Transition } from 'ethos/components';
+import { useServices } from 'wasser/services';
+import { useBinaryState, useShell } from 'wasser/common';
+import { Button, Transition } from 'wasser/components';
 import styles from './UpdaterBanner.module.css';
 
 type Props = {

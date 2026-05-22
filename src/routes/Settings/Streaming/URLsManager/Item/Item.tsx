@@ -1,11 +1,11 @@
 // Copyright (C) 2017-2024 Smart code 203358507
 
 import React, { useCallback, useMemo } from 'react';
-import { useProfile } from 'ethos/common';
-import CONSTANTS = require('ethos/common/CONSTANTS');
+import { useProfile } from 'wasser/common';
+import CONSTANTS = require('wasser/common/CONSTANTS');
 import { useTranslation } from 'react-i18next';
-import { Button, RadioButton } from 'ethos/components';
-import useStreamingServer from 'ethos/common/useStreamingServer';
+import { Button, RadioButton } from 'wasser/components';
+import useStreamingServer from 'wasser/common/useStreamingServer';
 import Icon from '@stremio/stremio-icons/react';
 import styles from './Item.module.css';
 import classNames from 'classnames';

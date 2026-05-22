@@ -5,10 +5,10 @@ const { useTranslation } = require('react-i18next');
 const PropTypes = require('prop-types');
 const classnames = require('classnames');
 const Icon = require('@stremio/stremio-icons/react');
-const { Button } = require('ethos/components');
-const Popup = require('ethos/components/Popup');
-const ModalDialog = require('ethos/components/ModalDialog');
-const useBinaryState = require('ethos/common/useBinaryState');
+const { Button } = require('wasser/components');
+const Popup = require('wasser/components/Popup');
+const ModalDialog = require('wasser/components/ModalDialog');
+const useBinaryState = require('wasser/common/useBinaryState');
 const styles = require('./styles.module.css');
 
 const Multiselect = ({ className, mode, direction, title, disabled, dataset, options, renderLabelContent, renderLabelText, onOpen, onClose, onSelect, ...props }) => {

@@ -2,8 +2,8 @@ import React, { useCallback, useEffect, useMemo, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import classNames from 'classnames';
 import Icon from '@stremio/stremio-icons/react';
-import { Button } from 'ethos/components';
-import { useInterval, useTimeout } from 'ethos/common';
+import { Button } from 'wasser/components';
+import { useInterval, useTimeout } from 'wasser/common';
 import styles from './Stepper.module.css';
 
 const clamp = (value: number, min?: number, max?: number) => {

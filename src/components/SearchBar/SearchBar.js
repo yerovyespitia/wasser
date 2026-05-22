@@ -4,7 +4,7 @@ const React = require('react');
 const PropTypes = require('prop-types');
 const classnames = require('classnames');
 const Icon = require('@stremio/stremio-icons/react');
-const TextInput = require('ethos/components/TextInput');
+const TextInput = require('wasser/components/TextInput');
 const SearchBarPlaceholder = require('./SearchBarPlaceholder');
 const styles = require('./styles.module.css');
 

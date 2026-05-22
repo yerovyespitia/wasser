@@ -1,8 +1,8 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import classNames from 'classnames';
 import { t } from 'i18next';
-import { Transition } from 'ethos/components';
-import { useBinaryState } from 'ethos/common';
+import { Transition } from 'wasser/components';
+import { useBinaryState } from 'wasser/common';
 import styles from './Indicator.module.css';
 
 type Property = {

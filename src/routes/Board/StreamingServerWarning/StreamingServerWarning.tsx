@@ -3,10 +3,10 @@
 import React, { useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import classnames from 'classnames';
-import { useServices } from 'ethos/services';
-import { Button } from 'ethos/components';
-import useProfile from 'ethos/common/useProfile';
-import { withCoreSuspender } from 'ethos/common/CoreSuspender';
+import { useServices } from 'wasser/services';
+import { Button } from 'wasser/components';
+import useProfile from 'wasser/common/useProfile';
+import { withCoreSuspender } from 'wasser/common/CoreSuspender';
 import styles from './StreamingServerWarning.module.css';
 
 type Props = {

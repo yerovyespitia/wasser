@@ -5,9 +5,9 @@ const ReactIs = require('react-is');
 const PropTypes = require('prop-types');
 const classnames = require('classnames');
 const Icon = require('@stremio/stremio-icons/react');
-const { Button } = require('ethos/components');
-const CONSTANTS = require('ethos/common/CONSTANTS');
-const useTranslate = require('ethos/common/useTranslate');
+const { Button } = require('wasser/components');
+const CONSTANTS = require('wasser/common/CONSTANTS');
+const useTranslate = require('wasser/common/useTranslate');
 const MetaRowPlaceholder = require('./MetaRowPlaceholder');
 const styles = require('./styles.module.css');
 

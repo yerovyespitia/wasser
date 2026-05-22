@@ -1,7 +1,7 @@
 // Copyright (C) 2017-2023 Smart code 203358507
 
 const React = require('react');
-const { useTranslate } = require('ethos/common');
+const { useTranslate } = require('wasser/common');
 
 const ALLOWED_TYPES = new Set([null, 'movie', 'series']);
 

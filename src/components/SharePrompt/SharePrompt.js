@@ -5,11 +5,11 @@ const PropTypes = require('prop-types');
 const classnames = require('classnames');
 const { useTranslation } = require('react-i18next');
 const Icon = require('@stremio/stremio-icons/react');
-const { useRouteFocused } = require('ethos-router');
-const { useServices } = require('ethos/services');
-const { Button } = require('ethos/components');
-const TextInput = require('ethos/components/TextInput');
-const useToast = require('ethos/common/Toast/useToast');
+const { useRouteFocused } = require('wasser-router');
+const { useServices } = require('wasser/services');
+const { Button } = require('wasser/components');
+const TextInput = require('wasser/components/TextInput');
+const useToast = require('wasser/common/Toast/useToast');
 const styles = require('./styles.module.css');
 
 const SharePrompt = ({ className, url }) => {

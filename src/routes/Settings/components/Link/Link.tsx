@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button } from 'ethos/components';
+import { Button } from 'wasser/components';
 import styles from './Link.module.css';
 
 type Props = {

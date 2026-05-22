@@ -3,7 +3,7 @@
 const React = require('react');
 const PropTypes = require('prop-types');
 const classnames = require('classnames');
-const { Button } = require('ethos/components');
+const { Button } = require('wasser/components');
 const styles = require('./CenterControls.module.css');
 
 function Replay10Icon({ className }) {

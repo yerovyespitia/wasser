@@ -2,7 +2,7 @@
 
 import React, { forwardRef } from 'react';
 import classnames from 'classnames';
-import { Button } from 'ethos/components';
+import { Button } from 'wasser/components';
 import styles from './Toggle.module.css';
 
 type Props = {

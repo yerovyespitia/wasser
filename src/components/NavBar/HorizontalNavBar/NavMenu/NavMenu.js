@@ -3,9 +3,9 @@
 const React = require('react');
 const PropTypes = require('prop-types');
 const classnames = require('classnames');
-const { useRouteFocused } = require('ethos-router');
-const Popup = require('ethos/components/Popup');
-const useBinaryState = require('ethos/common/useBinaryState');
+const { useRouteFocused } = require('wasser-router');
+const Popup = require('wasser/components/Popup');
+const useBinaryState = require('wasser/common/useBinaryState');
 const NavMenuContent = require('./NavMenuContent');
 const styles = require('./styles.module.css');
 

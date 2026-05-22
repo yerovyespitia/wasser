@@ -3,7 +3,7 @@
 import React, { useEffect, useMemo, useRef } from 'react';
 import Icon from '@stremio/stremio-icons/react';
 import classNames from 'classnames';
-import { Button } from 'ethos/components';
+import { Button } from 'wasser/components';
 import useCalendarDate from '../../useCalendarDate';
 import styles from './Item.module.css';
 

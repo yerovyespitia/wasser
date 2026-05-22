@@ -1,11 +1,11 @@
 import React, { useMemo } from 'react';
 import classNames from 'classnames';
 import { useTranslation } from 'react-i18next';
-import { useServices } from 'ethos/services';
-import { Button } from 'ethos/components';
+import { useServices } from 'wasser/services';
+import { Button } from 'wasser/components';
 import { SECTIONS } from '../constants';
-import { usePlatform } from 'ethos/common';
-import { appVersion, commitHash } from 'ethos/common/buildInfo';
+import { usePlatform } from 'wasser/common';
+import { appVersion, commitHash } from 'wasser/common/buildInfo';
 import styles from './Menu.module.css';
 
 type Props = {

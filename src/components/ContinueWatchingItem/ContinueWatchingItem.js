@@ -2,8 +2,8 @@
 
 const React = require('react');
 const PropTypes = require('prop-types');
-const { useServices } = require('ethos/services');
-const LibItem = require('ethos/components/LibItem');
+const { useServices } = require('wasser/services');
+const LibItem = require('wasser/components/LibItem');
 
 const ContinueWatchingItem = ({ _id, notifications, background, poster, posterShape, ...props }) => {
     const { core } = useServices();

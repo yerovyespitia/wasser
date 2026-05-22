@@ -3,7 +3,7 @@
 const React = require('react');
 const PropTypes = require('prop-types');
 const classnames = require('classnames');
-const { Image } = require('ethos/components');
+const { Image } = require('wasser/components');
 const styles = require('./styles.module.css');
 
 const BufferingLoader = React.forwardRef(({ className, logo }, ref) => {

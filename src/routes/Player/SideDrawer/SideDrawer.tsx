@@ -3,10 +3,10 @@
 import React, { useMemo, useCallback, useState, forwardRef, memo } from 'react';
 import classNames from 'classnames';
 import Icon from '@stremio/stremio-icons/react';
-import { useServices } from 'ethos/services';
-import { CONSTANTS, getNewEpisodeVideoId } from 'ethos/common';
-import { MetaPreview, Video } from 'ethos/components';
-import SeasonsBar from 'ethos/routes/MetaDetails/VideosList/SeasonsBar';
+import { useServices } from 'wasser/services';
+import { CONSTANTS, getNewEpisodeVideoId } from 'wasser/common';
+import { MetaPreview, Video } from 'wasser/components';
+import SeasonsBar from 'wasser/routes/MetaDetails/VideosList/SeasonsBar';
 import styles from './SideDrawer.module.css';
 
 type Props = {

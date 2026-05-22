@@ -37,7 +37,7 @@ Project maintainers are responsible for enforcing this code of conduct. They can
 
 ## Scope
 
-This Code of Conduct applies everywhere in `ethos` repository, and also applies when an individual is officially representing the project or its community in other spaces.
+This Code of Conduct applies everywhere in `wasser` repository, and also applies when an individual is officially representing the project or its community in other spaces.
 
 ## Enforcement
 

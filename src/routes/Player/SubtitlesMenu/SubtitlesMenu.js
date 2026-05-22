@@ -3,9 +3,9 @@
 const React = require('react');
 const PropTypes = require('prop-types');
 const classnames = require('classnames');
-const { languages } = require('ethos/common');
-const { SUBTITLES_SIZES, DEFAULT_SUBTITLES_LANGUAGE, LOCAL_SUBTITLES_LANGUAGE } = require('ethos/common/CONSTANTS');
-const { Button } = require('ethos/components');
+const { languages } = require('wasser/common');
+const { SUBTITLES_SIZES, DEFAULT_SUBTITLES_LANGUAGE, LOCAL_SUBTITLES_LANGUAGE } = require('wasser/common/CONSTANTS');
+const { Button } = require('wasser/components');
 const styles = require('./styles.module.css');
 const { t } = require('i18next');
 const Stepper = require('./Stepper');

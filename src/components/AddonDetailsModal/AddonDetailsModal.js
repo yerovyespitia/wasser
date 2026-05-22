@@ -3,10 +3,10 @@
 const React = require('react');
 const { useTranslation } = require('react-i18next');
 const PropTypes = require('prop-types');
-const ModalDialog = require('ethos/components/ModalDialog');
-const { withCoreSuspender } = require('ethos/common/CoreSuspender');
-const { usePlatform } = require('ethos/common/Platform');
-const { useServices } = require('ethos/services');
+const ModalDialog = require('wasser/components/ModalDialog');
+const { withCoreSuspender } = require('wasser/common/CoreSuspender');
+const { usePlatform } = require('wasser/common/Platform');
+const { useServices } = require('wasser/services');
 const AddonDetailsWithRemoteAndLocalAddon = withRemoteAndLocalAddon(require('./AddonDetails'));
 const useAddonDetails = require('./useAddonDetails');
 const styles = require('./styles.module.css');

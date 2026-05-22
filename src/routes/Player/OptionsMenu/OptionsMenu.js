@@ -4,8 +4,8 @@ const React = require('react');
 const PropTypes = require('prop-types');
 const classnames = require('classnames');
 const { useTranslation } = require('react-i18next');
-const { usePlatform, useToast } = require('ethos/common');
-const { useServices } = require('ethos/services');
+const { usePlatform, useToast } = require('wasser/common');
+const { useServices } = require('wasser/services');
 const Option = require('./Option');
 const styles = require('./styles.module.css');
 

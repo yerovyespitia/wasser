@@ -2,8 +2,8 @@
 
 const React = require('react');
 const UrlUtils = require('url');
-const { useServices } = require('ethos/services');
-const { useModelState } = require('ethos/common');
+const { useServices } = require('wasser/services');
+const { useModelState } = require('wasser/common');
 
 const map = (discover) => ({
     ...discover,

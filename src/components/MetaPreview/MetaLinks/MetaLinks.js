@@ -3,8 +3,8 @@
 const React = require('react');
 const PropTypes = require('prop-types');
 const classnames = require('classnames');
-const { Button } = require('ethos/components');
-const useTranslate = require('ethos/common/useTranslate');
+const { Button } = require('wasser/components');
+const useTranslate = require('wasser/common/useTranslate');
 const styles = require('./styles.module.css');
 
 const MetaLinks = ({ className, label, links }) => {

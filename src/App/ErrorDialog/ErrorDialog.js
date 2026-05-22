@@ -4,7 +4,7 @@ const React = require('react');
 const { useTranslation } = require('react-i18next');
 const PropTypes = require('prop-types');
 const classnames = require('classnames');
-const { Image, Button } = require('ethos/components');
+const { Image, Button } = require('wasser/components');
 const styles = require('./styles.module.css');
 
 const ErrorDialog = ({ className }) => {

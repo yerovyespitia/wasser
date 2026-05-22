@@ -4,12 +4,12 @@ const React = require('react');
 const PropTypes = require('prop-types');
 const classnames = require('classnames');
 const Icon = require('@stremio/stremio-icons/react');
-const { Button } = require('ethos/components');
-const { useServices } = require('ethos/services');
+const { Button } = require('wasser/components');
+const { useServices } = require('wasser/services');
 const SeekBar = require('./SeekBar');
 const VolumeSlider = require('./VolumeSlider');
 const styles = require('./styles.module.css');
-const { useBinaryState, usePlatform } = require('ethos/common');
+const { useBinaryState, usePlatform } = require('wasser/common');
 const { t } = require('i18next');
 
 const ControlBar = React.forwardRef(({

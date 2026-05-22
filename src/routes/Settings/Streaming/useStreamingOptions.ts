@@ -3,7 +3,7 @@
 import { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { deepEqual } from 'fast-equals';
-import { useServices } from 'ethos/services';
+import { useServices } from 'wasser/services';
 
 const CACHE_SIZES = [0, 2147483648, 5368709120, 10737418240, null];
 

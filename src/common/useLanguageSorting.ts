@@ -1,5 +1,5 @@
 import { useMemo } from 'react';
-import interfaceLanguages from 'ethos/common/interfaceLanguages.json';
+import interfaceLanguages from 'wasser/common/interfaceLanguages.json';
 
 const useLanguageSorting = (options: MultiselectMenuOption[]) => {
     const userLangCode = useMemo(() => {

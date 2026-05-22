@@ -1,5 +1,5 @@
 import { Buffer } from 'buffer';
-import CONSTANTS = require('ethos/common/CONSTANTS');
+import CONSTANTS = require('wasser/common/CONSTANTS');
 
 const { MIME_SIGNATURES } = CONSTANTS;
 const SIGNATURES = MIME_SIGNATURES as Record<string, string[]>;

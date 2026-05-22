@@ -2,7 +2,7 @@
 
 import React, { useCallback, useMemo, forwardRef } from 'react';
 import classNames from 'classnames';
-import { Button } from 'ethos/components';
+import { Button } from 'wasser/components';
 import styles from './Option.module.css';
 import Icon from '@stremio/stremio-icons/react';
 

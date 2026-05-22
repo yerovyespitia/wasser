@@ -1,9 +1,9 @@
 import { useCallback } from 'react';
 import magnet from 'magnet-uri';
-import { useServices } from 'ethos/services';
-import useToast from 'ethos/common/Toast/useToast';
-import useTorrent from 'ethos/common/useTorrent';
-import useStreamingServer from 'ethos/common/useStreamingServer';
+import { useServices } from 'wasser/services';
+import useToast from 'wasser/common/Toast/useToast';
+import useTorrent from 'wasser/common/useTorrent';
+import useStreamingServer from 'wasser/common/useStreamingServer';
 
 const HTTP_REGEX = /^https?:\/\/.+/i;
 

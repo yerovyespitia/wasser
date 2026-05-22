@@ -2,7 +2,7 @@
 
 import React, { useMemo } from 'react';
 import useRating from './useRating';
-import { ActionsGroup } from 'ethos/components';
+import { ActionsGroup } from 'wasser/components';
 
 type Props = {
     metaId?: string;

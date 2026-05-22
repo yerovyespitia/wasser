@@ -6,15 +6,15 @@ const classnames = require('classnames');
 const debounce = require('lodash.debounce');
 const { useTranslation } = require('react-i18next');
 const Icon = require('@stremio/stremio-icons/react');
-const { useRouteFocused } = require('ethos-router');
-const Button = require('ethos/components/Button').default;
-const TextInput = require('ethos/components/TextInput').default;
-const usePlayUrl = require('ethos/common/usePlayUrl');
-const { withCoreSuspender } = require('ethos/common/CoreSuspender');
+const { useRouteFocused } = require('wasser-router');
+const Button = require('wasser/components/Button').default;
+const TextInput = require('wasser/components/TextInput').default;
+const usePlayUrl = require('wasser/common/usePlayUrl');
+const { withCoreSuspender } = require('wasser/common/CoreSuspender');
 const useSearchHistory = require('./useSearchHistory');
 const useLocalSearch = require('./useLocalSearch');
 const styles = require('./styles.module.css');
-const useBinaryState = require('ethos/common/useBinaryState');
+const useBinaryState = require('wasser/common/useBinaryState');
 
 const SearchBar = React.memo(({ className, query, active }) => {
     const { t } = useTranslation();

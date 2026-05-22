@@ -4,8 +4,8 @@ import React, { useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import { useTranslation } from 'react-i18next';
 import Icon from '@stremio/stremio-icons/react';
-import { useShortcuts } from 'ethos/common';
-import { Button, ShortcutsGroup } from 'ethos/components';
+import { useShortcuts } from 'wasser/common';
+import { Button, ShortcutsGroup } from 'wasser/components';
 import styles from './styles.module.css';
 
 type Props = {

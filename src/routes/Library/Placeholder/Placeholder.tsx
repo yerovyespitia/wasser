@@ -3,7 +3,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import Icon from '@stremio/stremio-icons/react';
-import { Button, Image } from 'ethos/components';
+import { Button, Image } from 'wasser/components';
 import styles from './Placeholder.module.css';
 
 const Placeholder = () => {

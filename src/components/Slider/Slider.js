@@ -3,9 +3,9 @@
 const React = require('react');
 const PropTypes = require('prop-types');
 const classnames = require('classnames');
-const { useRouteFocused } = require('ethos-router');
-const useAnimationFrame = require('ethos/common/useAnimationFrame');
-const useLiveRef = require('ethos/common/useLiveRef');
+const { useRouteFocused } = require('wasser-router');
+const useAnimationFrame = require('wasser/common/useAnimationFrame');
+const useLiveRef = require('wasser/common/useLiveRef');
 const styles = require('./styles.module.css');
 
 const Slider = ({ className, value, buffered, minimumValue, maximumValue, disabled, onSlide, onComplete, audioBoost }) => {

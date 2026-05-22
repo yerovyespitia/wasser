@@ -5,11 +5,11 @@ const PropTypes = require('prop-types');
 const classnames = require('classnames');
 const { useTranslation } = require('react-i18next');
 const Icon = require('@stremio/stremio-icons/react');
-const { Button, Image, MultiselectMenu } = require('ethos/components');
-const { useServices } = require('ethos/services');
+const { Button, Image, MultiselectMenu } = require('wasser/components');
+const { useServices } = require('wasser/services');
 const Stream = require('./Stream');
 const styles = require('./styles.module.css');
-const { usePlatform, useProfile } = require('ethos/common');
+const { usePlatform, useProfile } = require('wasser/common');
 const SeasonEpisodePicker = require('../EpisodePicker');
 
 const ALL_ADDONS_KEY = 'ALL';

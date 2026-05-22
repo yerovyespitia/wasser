@@ -1,6 +1,6 @@
 {
-    "name": "Ethos Web",
-    "short_name": "Ethos",
+    "name": "Wasser Web",
+    "short_name": "Wasser",
     "description": "Freedom To Stream",
     "background_color": "#161523",
     "theme_color": "#2a2843",
@@ -46,14 +46,14 @@
             "sizes": "1440x900",
             "type": "image/webp",
             "form_factor": "wide",
-            "label": "Homescreen of Ethos"
+            "label": "Homescreen of Wasser"
         },
         {
             "src": "screenshots/board_narrow.webp",
             "sizes": "414x896",
             "type": "image/webp",
             "form_factor": "narrow",
-            "label": "Homescreen of Ethos"
+            "label": "Homescreen of Wasser"
         }
     ]
 }

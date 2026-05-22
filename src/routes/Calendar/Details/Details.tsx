@@ -3,7 +3,7 @@
 import React, { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import Icon from '@stremio/stremio-icons/react';
-import { Button } from 'ethos/components';
+import { Button } from 'wasser/components';
 import styles from './Details.module.css';
 
 type Props = {

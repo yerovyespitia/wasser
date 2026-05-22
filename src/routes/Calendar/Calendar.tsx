@@ -1,8 +1,8 @@
 // Copyright (C) 2017-2024 Smart code 203358507
 
 import React, { useMemo, useState } from 'react';
-import { useProfile, withCoreSuspender } from 'ethos/common';
-import { MainNavBars, BottomSheet } from 'ethos/components';
+import { useProfile, withCoreSuspender } from 'wasser/common';
+import { MainNavBars, BottomSheet } from 'wasser/components';
 import Selector from './Selector';
 import Table from './Table';
 import List from './List';

@@ -4,10 +4,10 @@ const React = require('react');
 const PropTypes = require('prop-types');
 const classnames = require('classnames');
 const debounce = require('lodash.debounce');
-const useTranslate = require('ethos/common/useTranslate');
+const useTranslate = require('wasser/common/useTranslate');
 const Icon = require('@stremio/stremio-icons/react');
-const { withCoreSuspender, getVisibleChildrenRange } = require('ethos/common');
-const { Image, MainNavBars, MetaItem, MetaRow } = require('ethos/components');
+const { withCoreSuspender, getVisibleChildrenRange } = require('wasser/common');
+const { Image, MainNavBars, MetaItem, MetaRow } = require('wasser/components');
 const useSearch = require('./useSearch');
 const styles = require('./styles.module.css');
 

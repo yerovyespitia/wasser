@@ -3,10 +3,10 @@
 const React = require('react');
 const classnames = require('classnames');
 const debounce = require('lodash.debounce');
-const { useRouteFocused } = require('ethos-router');
-const useTranslate = require('ethos/common/useTranslate');
-const { useStreamingServer, useNotifications, withCoreSuspender, getVisibleChildrenRange, useProfile } = require('ethos/common');
-const { ContinueWatchingItem, EventModal, MainNavBars, MetaItem, MetaRow } = require('ethos/components');
+const { useRouteFocused } = require('wasser-router');
+const useTranslate = require('wasser/common/useTranslate');
+const { useStreamingServer, useNotifications, withCoreSuspender, getVisibleChildrenRange, useProfile } = require('wasser/common');
+const { ContinueWatchingItem, EventModal, MainNavBars, MetaItem, MetaRow } = require('wasser/components');
 const useBoard = require('./useBoard');
 const useContinueWatchingPreview = require('./useContinueWatchingPreview');
 const styles = require('./styles.module.css');

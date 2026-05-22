@@ -3,9 +3,9 @@
 const React = require('react');
 const { useTranslation } = require('react-i18next');
 const PropTypes = require('prop-types');
-const { useRouteFocused } = require('ethos-router');
-const { usePlatform } = require('ethos/common');
-const { ModalDialog } = require('ethos/components');
+const { useRouteFocused } = require('wasser-router');
+const { usePlatform } = require('wasser/common');
+const { ModalDialog } = require('wasser/components');
 const CredentialsTextInput = require('../CredentialsTextInput');
 const styles = require('./styles.module.css');
 

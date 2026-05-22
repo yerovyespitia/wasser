@@ -7,7 +7,7 @@
         "outDir": "./dist",
         "moduleResolution": "node",
         "paths": {
-            "ethos/*": ["*"],
+            "wasser/*": ["*"],
         },
         "resolveJsonModule": true,
         "esModuleInterop": true,

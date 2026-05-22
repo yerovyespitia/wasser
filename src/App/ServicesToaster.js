@@ -1,8 +1,8 @@
 // Copyright (C) 2017-2023 Smart code 203358507
 
 const React = require('react');
-const { useServices } = require('ethos/services');
-const { useToast } = require('ethos/common');
+const { useServices } = require('wasser/services');
+const { useToast } = require('wasser/common');
 
 const ServicesToaster = () => {
     const { core, dragAndDrop } = useServices();

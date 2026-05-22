@@ -3,7 +3,7 @@
   "configVersion": 1,
   "workspaces": {
     "": {
-      "name": "ethos",
+      "name": "wasser",
       "dependencies": {
         "@babel/runtime": "7.26.0",
         "@sentry/browser": "8.42.0",

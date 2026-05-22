@@ -2,7 +2,7 @@
 
 import React, { useCallback, useMemo, useState, ChangeEvent } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Button, NumberInput } from 'ethos/components';
+import { Button, NumberInput } from 'wasser/components';
 import styles from './EpisodePicker.module.css';
 
 type Props = {

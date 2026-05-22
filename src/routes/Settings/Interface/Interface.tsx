@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react';
-import { useServices } from 'ethos/services';
-import { MultiselectMenu, Toggle } from 'ethos/components';
+import { useServices } from 'wasser/services';
+import { MultiselectMenu, Toggle } from 'wasser/components';
 import { Section, Option } from '../components';
 import useInterfaceOptions from './useInterfaceOptions';
 

@@ -1,7 +1,7 @@
 // Copyright (C) 2017-2024 Smart code 203358507
 
 import React, { memo } from 'react';
-import { HorizontalScroll } from 'ethos/components';
+import { HorizontalScroll } from 'wasser/components';
 import Chip from './Chip';
 import styles from './Chips.module.css';
 

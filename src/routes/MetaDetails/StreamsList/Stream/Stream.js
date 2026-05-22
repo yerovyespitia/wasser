@@ -5,10 +5,10 @@ const PropTypes = require('prop-types');
 const classnames = require('classnames');
 const Icon = require('@stremio/stremio-icons/react');
 const { t } = require('i18next');
-const { useProfile, usePlatform, useToast, useBinaryState } = require('ethos/common');
-const { Button, Image, Popup } = require('ethos/components');
-const { useServices } = require('ethos/services');
-const { useRouteFocused } = require('ethos-router');
+const { useProfile, usePlatform, useToast, useBinaryState } = require('wasser/common');
+const { Button, Image, Popup } = require('wasser/components');
+const { useServices } = require('wasser/services');
+const { useRouteFocused } = require('wasser-router');
 const StreamPlaceholder = require('./StreamPlaceholder');
 const styles = require('./styles.module.css');
 

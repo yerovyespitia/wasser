@@ -1,6 +1,6 @@
-# Ethos
+# Wasser
 
-Ethos is a fork of Stremio focused on improving the overall user experience while keeping the familiar media-center workflow for discovering, organizing, and watching video content through addons. It also modernizes parts of the stack with faster, newer tooling such as Bun and Vite.
+Wasser is a fork of Stremio focused on improving the overall user experience while keeping the familiar media-center workflow for discovering, organizing, and watching video content through addons. It also modernizes parts of the stack with faster, newer tooling such as Bun and Vite.
 
 ## Requirements
 
@@ -113,4 +113,4 @@ bun run scan-translations
 
 ## License
 
-Ethos is copyright 2017-2023 Smart code and available under GPLv2 license. See the [LICENSE](/LICENSE.md) file for more information.
+Wasser is copyright 2017-2023 Smart code and available under GPLv2 license. See the [LICENSE](/LICENSE.md) file for more information.

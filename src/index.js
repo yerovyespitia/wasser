@@ -1,6 +1,6 @@
 // Copyright (C) 2017-2026 Smart code 203358507
 
-const { sentryDsn, isProduction, serviceWorkerDisabled } = require('ethos/common/buildInfo');
+const { sentryDsn, isProduction, serviceWorkerDisabled } = require('wasser/common/buildInfo');
 
 if (typeof sentryDsn === 'string' && sentryDsn.length > 0) {
     const Sentry = require('@sentry/browser');

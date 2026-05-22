@@ -4,9 +4,9 @@ const React = require('react');
 const throttle = require('lodash.throttle');
 const { deepEqual } = require('fast-equals');
 const intersection = require('lodash.intersection');
-const { useCoreSuspender } = require('ethos/common/CoreSuspender');
-const { useRouteFocused } = require('ethos-router');
-const { useServices } = require('ethos/services');
+const { useCoreSuspender } = require('wasser/common/CoreSuspender');
+const { useRouteFocused } = require('wasser-router');
+const { useServices } = require('wasser/services');
 
 const useModelState = ({ action, ...args }) => {
     const { core } = useServices();

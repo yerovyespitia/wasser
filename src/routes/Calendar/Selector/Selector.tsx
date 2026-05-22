@@ -2,7 +2,7 @@
 
 import React, { useCallback, useMemo } from 'react';
 import Icon from '@stremio/stremio-icons/react';
-import { Button } from 'ethos/components';
+import { Button } from 'wasser/components';
 import useCalendarDate from '../useCalendarDate';
 import styles from './Selector.module.css';
 

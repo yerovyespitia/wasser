@@ -2,8 +2,8 @@
 
 const React = require('react');
 const { deepEqual } = require('fast-equals');
-const { withCoreSuspender, useProfile, useToast } = require('ethos/common');
-const { useServices } = require('ethos/services');
+const { withCoreSuspender, useProfile, useToast } = require('wasser/common');
+const { useServices } = require('wasser/services');
 
 const SearchParamsHandler = () => {
     const { core } = useServices();

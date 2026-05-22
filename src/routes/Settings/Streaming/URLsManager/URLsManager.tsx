@@ -3,7 +3,7 @@
 import React, { useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import styles from './URLsManager.module.css';
-import { Button } from 'ethos/components';
+import { Button } from 'wasser/components';
 import Item from './Item';
 import AddItem from './AddItem';
 import Icon from '@stremio/stremio-icons/react';

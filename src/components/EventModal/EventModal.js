@@ -2,8 +2,8 @@
 
 const React = require('react');
 const { useTranslation } = require('react-i18next');
-const Button = require('ethos/components/Button');
-const ModalDialog = require('ethos/components/ModalDialog');
+const Button = require('wasser/components/Button');
+const ModalDialog = require('wasser/components/ModalDialog');
 const useEvents = require('./useEvents');
 const styles = require('./styles.module.css');
 const Icon = require('@stremio/stremio-icons/react');

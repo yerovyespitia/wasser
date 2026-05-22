@@ -5,13 +5,13 @@ const PropTypes = require('prop-types');
 const classnames = require('classnames');
 const { useTranslation } = require('react-i18next');
 const Icon = require('@stremio/stremio-icons/react');
-const { useServices } = require('ethos/services');
-const { Button } = require('ethos/components');
-const useProfile = require('ethos/common/useProfile');
-const usePlayUrl = require('ethos/common/usePlayUrl');
-const useToast = require('ethos/common/Toast/useToast');
-const { withCoreSuspender } = require('ethos/common/CoreSuspender');
-const useStreamingServer = require('ethos/common/useStreamingServer');
+const { useServices } = require('wasser/services');
+const { Button } = require('wasser/components');
+const useProfile = require('wasser/common/useProfile');
+const usePlayUrl = require('wasser/common/usePlayUrl');
+const useToast = require('wasser/common/Toast/useToast');
+const { withCoreSuspender } = require('wasser/common/CoreSuspender');
+const useStreamingServer = require('wasser/common/useStreamingServer');
 const styles = require('./styles.module.css');
 
 const NavMenuContent = ({ onClick }) => {

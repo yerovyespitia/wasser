@@ -2,7 +2,7 @@
 
 import React, { MouseEvent, memo, useCallback, useEffect, useRef } from 'react';
 import classNames from 'classnames';
-import { Button } from 'ethos/components';
+import { Button } from 'wasser/components';
 import styles from './Chip.module.css';
 
 type Props = {
