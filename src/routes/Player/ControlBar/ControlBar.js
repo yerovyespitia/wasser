@@ -27,6 +27,7 @@ const ControlBar = React.forwardRef(({
     nextVideo,
     stream,
     statistics,
+    fullscreen,
     onPlayRequested,
     onPauseRequested,
     onNextVideoRequested,
@@ -40,6 +41,7 @@ const ControlBar = React.forwardRef(({
     onToggleSideDrawer,
     onToggleOptionsMenu,
     onToggleStatisticsMenu,
+    onToggleFullscreen,
     onTouchEnd,
     ...props
 }, ref) => {
@@ -95,6 +97,9 @@ const ControlBar = React.forwardRef(({
     const onChromecastButtonClick = React.useCallback(() => {
         chromecast.transport.requestSession();
     }, []);
+    const title = React.useCallback((key) => {
+        return toTitleCase(t(key));
+    }, []);
     React.useEffect(() => {
         const onStateChanged = () => {
             setChromecastServiceActive(chromecast.active);
@@ -114,7 +119,7 @@ const ControlBar = React.forwardRef(({
                 onSeekRequested={onSeekRequested}
             />
             <div className={styles['control-bar-buttons-container']}>
-                <Button className={classnames(styles['control-bar-button'], { 'disabled': typeof paused !== 'boolean' })} title={paused ? t('PLAYER_PLAY') : t('PLAYER_PAUSE')} tabIndex={-1} onClick={onPlayPauseButtonClick}>
+                <Button className={classnames(styles['control-bar-button'], { 'disabled': typeof paused !== 'boolean' })} title={paused ? title('PLAYER_PLAY') : title('PLAYER_PAUSE')} tabIndex={-1} onClick={onPlayPauseButtonClick}>
                     {
                         typeof paused !== 'boolean' || paused ?
                             <PlayIcon className={styles['icon']} />
@@ -124,13 +129,13 @@ const ControlBar = React.forwardRef(({
                 </Button>
                 {
                     nextVideo !== null ?
-                        <Button className={classnames(styles['control-bar-button'])} title={t('PLAYER_NEXT_VIDEO')} tabIndex={-1} onClick={onNextVideoButtonClick}>
+                        <Button className={classnames(styles['control-bar-button'])} title={title('PLAYER_NEXT_VIDEO')} tabIndex={-1} onClick={onNextVideoButtonClick}>
                             <Icon className={styles['icon']} name={'next'} />
                         </Button>
                         :
                         null
                 }
-                <Button className={classnames(styles['control-bar-button'], { 'disabled': typeof muted !== 'boolean' })} title={muted ? t('PLAYER_UNMUTE') : t('PLAYER_MUTE')} tabIndex={-1} onClick={onMuteButtonClick}>
+                <Button className={classnames(styles['control-bar-button'], { 'disabled': typeof muted !== 'boolean' })} title={muted ? title('PLAYER_UNMUTE') : title('PLAYER_MUTE')} tabIndex={-1} onClick={onMuteButtonClick}>
                     {
                         (typeof muted === 'boolean' && muted) || volume === 0 ?
                             <VolumeMutedIcon className={styles['icon']} />
@@ -152,37 +157,40 @@ const ControlBar = React.forwardRef(({
                         : null
                 }
                 <div className={styles['spacing']} />
-                <Button className={styles['control-bar-buttons-menu-button']} title={t('OPTIONS')} onClick={toggleButtonsMenu}>
+                <Button className={styles['control-bar-buttons-menu-button']} title={title('OPTIONS')} onClick={toggleButtonsMenu}>
                     <Icon className={styles['icon']} name={'more-vertical'} />
                 </Button>
                 <div className={classnames(styles['control-bar-buttons-menu-container'], { 'open': buttonsMenuOpen })}>
-                    <Button className={classnames(styles['control-bar-button'], { 'disabled': statistics === null || statistics.type === 'Err' || stream === null || typeof stream.infoHash !== 'string' || typeof stream.fileIdx !== 'number' })} title={t('STREAMING_INFO')} tabIndex={-1} onMouseDown={onStatisticsButtonMouseDown} onClick={onToggleStatisticsMenu}>
+                    <Button className={classnames(styles['control-bar-button'], { 'disabled': statistics === null || statistics.type === 'Err' || stream === null || typeof stream.infoHash !== 'string' || typeof stream.fileIdx !== 'number' })} title={title('STREAMING_INFO')} tabIndex={-1} onMouseDown={onStatisticsButtonMouseDown} onClick={onToggleStatisticsMenu}>
                         <Icon className={styles['icon']} name={'network'} />
                     </Button>
-                    <Button className={classnames(styles['control-bar-button'], { 'disabled': playbackSpeed === null })} title={t('PLAYBACK_SPEED')} tabIndex={-1} onMouseDown={onSpeedButtonMouseDown} onClick={onToggleSpeedMenu}>
+                    <Button className={classnames(styles['control-bar-button'], { 'disabled': playbackSpeed === null })} title={title('PLAYBACK_SPEED')} tabIndex={-1} onMouseDown={onSpeedButtonMouseDown} onClick={onToggleSpeedMenu}>
                         <Icon className={styles['icon']} name={'speed'} />
                     </Button>
-                    <Button className={classnames(styles['control-bar-button'], { 'disabled': !chromecastServiceActive })} title={t('CHROMECAST')} tabIndex={-1} onClick={onChromecastButtonClick}>
+                    <Button className={classnames(styles['control-bar-button'], { 'disabled': !chromecastServiceActive })} title={title('CHROMECAST')} tabIndex={-1} onClick={onChromecastButtonClick}>
                         <Icon className={styles['icon']} name={'cast'} />
                     </Button>
-                    <Button className={classnames(styles['control-bar-button'], { 'disabled': !Array.isArray(subtitlesTracks) || subtitlesTracks.length === 0 })} title={t('PLAYER_SUBTITLES')} tabIndex={-1} onMouseDown={onSubtitlesButtonMouseDown} onClick={onToggleSubtitlesMenu}>
+                    <Button className={classnames(styles['control-bar-button'], { 'disabled': !Array.isArray(subtitlesTracks) || subtitlesTracks.length === 0 })} title={title('PLAYER_SUBTITLES')} tabIndex={-1} onMouseDown={onSubtitlesButtonMouseDown} onClick={onToggleSubtitlesMenu}>
                         <Icon className={styles['icon']} name={'subtitles'} />
                     </Button>
-                    <Button className={classnames(styles['control-bar-button'], { 'disabled': !Array.isArray(audioTracks) || audioTracks.length === 0 })} title={t('AUDIO_TRACKS')} tabIndex={-1} onMouseDown={onAudioButtonMouseDown} onClick={onToggleAudioMenu}>
+                    <Button className={classnames(styles['control-bar-button'], { 'disabled': !Array.isArray(audioTracks) || audioTracks.length === 0 })} title={title('AUDIO_TRACKS')} tabIndex={-1} onMouseDown={onAudioButtonMouseDown} onClick={onToggleAudioMenu}>
                         <Icon className={styles['icon']} name={'audio-tracks'} />
                     </Button>
                     {
                         metaItem?.content?.videos?.length > 0 ?
-                            <Button className={styles['control-bar-button']} title={t('PLAYER_NEXT_VIDEO')} tabIndex={-1} onMouseDown={onVideosButtonMouseDown} onClick={onToggleSideDrawer}>
+                            <Button className={styles['control-bar-button']} title={title('PLAYER_NEXT_VIDEO')} tabIndex={-1} onMouseDown={onVideosButtonMouseDown} onClick={onToggleSideDrawer}>
                                 <Icon className={styles['icon']} name={'episodes'} />
                             </Button>
                             :
                             null
                     }
-                    <Button className={classnames(styles['control-bar-button'], { 'disabled': !stream })} title={t('OPTIONS')} tabIndex={-1} onMouseDown={onOptionsButtonMouseDown} onClick={onToggleOptionsMenu}>
+                    <Button className={classnames(styles['control-bar-button'], { 'disabled': !stream })} title={title('OPTIONS')} tabIndex={-1} onMouseDown={onOptionsButtonMouseDown} onClick={onToggleOptionsMenu}>
                         <Icon className={styles['icon']} name={'more-horizontal'} />
                     </Button>
                 </div>
+                <Button className={styles['control-bar-button']} title={title(fullscreen ? 'EXIT_FULLSCREEN' : 'ENTER_FULLSCREEN')} tabIndex={-1} onClick={onToggleFullscreen}>
+                    <FullscreenIcon className={styles['icon']} active={fullscreen} />
+                </Button>
             </div>
         </div>
     );
@@ -203,6 +211,7 @@ ControlBar.propTypes = {
     nextVideo: PropTypes.object,
     stream: PropTypes.object,
     statistics: PropTypes.object,
+    fullscreen: PropTypes.bool,
     onPlayRequested: PropTypes.func,
     onPauseRequested: PropTypes.func,
     onNextVideoRequested: PropTypes.func,
@@ -216,12 +225,20 @@ ControlBar.propTypes = {
     onToggleSideDrawer: PropTypes.func,
     onToggleOptionsMenu: PropTypes.func,
     onToggleStatisticsMenu: PropTypes.func,
+    onToggleFullscreen: PropTypes.func,
     onMouseOver: PropTypes.func,
     onMouseMove: PropTypes.func,
     onTouchEnd: PropTypes.func,
 };
 
 module.exports = ControlBar;
+
+function toTitleCase(value) {
+    return String(value)
+        .replaceAll('_', ' ')
+        .toLocaleLowerCase()
+        .replace(/(^|\s)\p{L}/gu, (letter) => letter.toLocaleUpperCase());
+}
 
 function PlayIcon({ className }) {
     return (
@@ -275,4 +292,22 @@ function VolumeMutedIcon({ className }) {
 
 VolumeMutedIcon.propTypes = {
     className: PropTypes.string
+};
+
+function FullscreenIcon({ className, active }) {
+    return (
+        <svg className={className} viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            {
+                active ?
+                    <path fill="currentColor" d="M9.5 4v3.5a2 2 0 0 1-2 2H4v-2h3.5V4h2Zm5 0h2v3.5H20v2h-3.5a2 2 0 0 1-2-2V4ZM4 14.5h3.5a2 2 0 0 1 2 2V20h-2v-3.5H4v-2Zm12.5 0H20v2h-3.5V20h-2v-3.5a2 2 0 0 1 2-2Z" />
+                    :
+                    <path fill="currentColor" d="M4 4h5.5v2H6v3.5H4V4Zm10.5 0H20v5.5h-2V6h-3.5V4ZM4 14.5h2V18h3.5v2H4v-5.5Zm14 0h2V20h-5.5v-2H18v-3.5Z" />
+            }
+        </svg>
+    );
+}
+
+FullscreenIcon.propTypes = {
+    className: PropTypes.string,
+    active: PropTypes.bool
 };

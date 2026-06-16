@@ -1,8 +1,13 @@
 const path = require('node:path');
+const fs = require('node:fs');
+const http = require('node:http');
+const { spawn } = require('node:child_process');
 const { pathToFileURL } = require('node:url');
-const { app, BrowserWindow, ipcMain, nativeImage, shell } = require('electron');
+const { app, BrowserWindow, ipcMain, nativeImage, session, shell } = require('electron');
 
 const isDev = typeof process.env.ELECTRON_RENDERER_URL === 'string' && process.env.ELECTRON_RENDERER_URL.length > 0;
+const localStreamingServerSettingsUrl = 'http://127.0.0.1:11470/settings';
+let localStreamingServerProcess = null;
 
 function getRendererUrl() {
     if (isDev) {
@@ -26,6 +31,99 @@ function getDockIconPath() {
     }
 
     return getAppIconPath();
+}
+
+function isLocalStreamingServerUrl(url) {
+    try {
+        const { hostname, port } = new URL(url);
+
+        return ['127.0.0.1', 'localhost', '::1'].includes(hostname) && ['11470', '12470'].includes(port);
+    } catch (_error) {
+        return false;
+    }
+}
+
+function addHeader(responseHeaders, name, value) {
+    const existingName = Object.keys(responseHeaders).find((headerName) => headerName.toLowerCase() === name.toLowerCase());
+
+    responseHeaders[existingName || name] = [value];
+}
+
+function allowLocalStreamingServerCors() {
+    session.defaultSession.webRequest.onHeadersReceived((details, callback) => {
+        if (!isLocalStreamingServerUrl(details.url)) {
+            callback({ responseHeaders: details.responseHeaders });
+            return;
+        }
+
+        const responseHeaders = {
+            ...details.responseHeaders,
+        };
+
+        addHeader(responseHeaders, 'Access-Control-Allow-Origin', '*');
+        addHeader(responseHeaders, 'Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
+        addHeader(responseHeaders, 'Access-Control-Allow-Headers', 'Range, Content-Type, Accept, Origin');
+        addHeader(responseHeaders, 'Access-Control-Expose-Headers', 'Content-Length, Content-Range, Accept-Ranges');
+
+        callback({ responseHeaders });
+    });
+}
+
+function checkUrl(url, timeout = 500) {
+    return new Promise((resolve) => {
+        const request = http.get(url, (response) => {
+            response.resume();
+            resolve(true);
+        });
+
+        request.on('error', () => resolve(false));
+        request.setTimeout(timeout, () => {
+            request.destroy();
+            resolve(false);
+        });
+    });
+}
+
+function getLocalStreamingServerCommand() {
+    const serverDir = process.env.WASSER_STREMIO_SERVER_DIR ||
+        (process.platform === 'darwin' ? '/Applications/Stremio.app/Contents/MacOS' : null);
+
+    if (typeof serverDir !== 'string') {
+        return null;
+    }
+
+    const nodePath = path.join(serverDir, process.platform === 'win32' ? 'node.exe' : 'node');
+    const serverPath = path.join(serverDir, 'server.js');
+
+    return fs.existsSync(nodePath) && fs.existsSync(serverPath) ?
+        { cwd: serverDir, command: nodePath, args: [serverPath] }
+        :
+        null;
+}
+
+async function startLocalStreamingServerIfAvailable() {
+    if (process.env.WASSER_DISABLE_STREMIO_SERVER === '1') {
+        return;
+    }
+
+    if (await checkUrl(localStreamingServerSettingsUrl)) {
+        return;
+    }
+
+    const serverCommand = getLocalStreamingServerCommand();
+
+    if (serverCommand === null) {
+        return;
+    }
+
+    localStreamingServerProcess = spawn(serverCommand.command, serverCommand.args, {
+        cwd: serverCommand.cwd,
+        stdio: isDev ? 'inherit' : 'ignore',
+    });
+
+    localStreamingServerProcess.on('exit', () => {
+        localStreamingServerProcess = null;
+    });
 }
 
 function createWindow() {
@@ -90,7 +188,10 @@ function createWindow() {
     mainWindow.loadURL(getRendererUrl());
 }
 
-app.whenReady().then(() => {
+app.whenReady().then(async () => {
+    allowLocalStreamingServerCors();
+    await startLocalStreamingServerIfAvailable();
+
     if (process.platform === 'darwin') {
         const dockIcon = nativeImage.createFromPath(getDockIconPath());
 
@@ -130,6 +231,13 @@ app.whenReady().then(() => {
             createWindow();
         }
     });
+});
+
+app.on('before-quit', () => {
+    if (localStreamingServerProcess !== null) {
+        localStreamingServerProcess.kill();
+        localStreamingServerProcess = null;
+    }
 });
 
 app.on('window-all-closed', () => {

@@ -10,7 +10,7 @@
         "@stremio/stremio-colors": "5.2.0",
         "@stremio/stremio-core-web": "0.56.4",
         "@stremio/stremio-icons": "5.8.0",
-        "@stremio/stremio-video": "0.0.75",
+        "@stremio/stremio-video": "0.0.79",
         "a-color-picker": "1.2.1",
         "bowser": "2.11.0",
         "buffer": "6.0.3",
@@ -470,7 +470,7 @@
 
     "@stremio/stremio-icons": ["@stremio/stremio-icons@5.8.0", "", {}, "sha512-IVUvQbIWfA4YEHCTed7v/sdQJCJ+OOCf84LTWpkE2W6GLQ+15WHcMEJrVkE1X3ekYJnGg3GjT0KLO6tKSU0P4w=="],
 
-    "@stremio/stremio-video": ["@stremio/stremio-video@0.0.75", "", { "dependencies": { "buffer": "6.0.3", "color": "4.2.3", "deep-freeze": "0.0.1", "eventemitter3": "4.0.7", "hat": "0.0.3", "hls.js": "https://github.com/Stremio/hls.js/releases/download/v1.5.4-patch2/hls.js-1.5.4-patch2.tgz", "lodash.clonedeep": "4.5.0", "magnet-uri": "6.2.0", "url": "0.11.4", "video-name-parser": "1.4.6", "vtt.js": "github:jaruba/vtt.js#84d33d157848407d790d78423dacc41a096294f0" } }, "sha512-oKXMq156BVagzziWoTsmgNYABCSfwV9hR/TM6+JR4lne5pW4qmUN17ba/Fxsr+USKHeCKUaz1u0asKBj06HfyA=="],
+    "@stremio/stremio-video": ["@stremio/stremio-video@0.0.79", "", { "dependencies": { "buffer": "6.0.3", "color": "4.2.3", "deep-freeze": "0.0.1", "eventemitter3": "4.0.7", "hat": "0.0.3", "hls.js": "https://github.com/Stremio/hls.js/releases/download/v1.5.4-patch2/hls.js-1.5.4-patch2.tgz", "lodash.clonedeep": "4.5.0", "magnet-uri": "6.2.0", "url": "0.11.4", "video-name-parser": "1.4.6", "vtt.js": "github:jaruba/vtt.js#84d33d157848407d790d78423dacc41a096294f0" } }, "sha512-RfxmeG+rQdoflfqBybRB9vSqb3cjc3Fd5T9uNNUbwC287apQsNyjYOlvk7sfRlQ1Za/UdFsyoqR5vGBSBDzlhQ=="],
 
     "@stylistic/eslint-plugin": ["@stylistic/eslint-plugin@5.10.0", "", { "dependencies": { "@eslint-community/eslint-utils": "^4.9.1", "@typescript-eslint/types": "^8.56.0", "eslint-visitor-keys": "^4.2.1", "espree": "^10.4.0", "estraverse": "^5.3.0", "picomatch": "^4.0.3" }, "peerDependencies": { "eslint": "^9.0.0 || ^10.0.0" } }, "sha512-nPK52ZHvot8Ju/0A4ucSX1dcPV2/1clx0kLcH5wDmrE4naKso7TUC/voUyU1O9OTKTrR6MYip6LP0ogEMQ9jPQ=="],
 

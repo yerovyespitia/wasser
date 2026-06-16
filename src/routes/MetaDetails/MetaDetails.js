@@ -206,6 +206,7 @@ const MetaDetails = ({ urlParams, queryParams }) => {
             },
         ];
     }, [metaContent, t, addToLibrary, removeFromLibrary, toggleWatched]);
+    const showListAlongside = metaContent?.type === 'series';
 
     return (
         <div className={styles['metadetails-container']}>
@@ -262,7 +263,7 @@ const MetaDetails = ({ urlParams, queryParams }) => {
                                 metaDetails.metaItem.content.type === 'Loading' ?
                                     <MetaPreview.Placeholder className={styles['meta-preview']} />
                                     :
-                                    <React.Fragment>
+                                    <div className={classnames(styles['details-layout'], { [styles['episodes-alongside']]: showListAlongside })}>
                                         <section className={classnames(styles['meta-preview'], styles['hero-section'], 'animation-fade-in')}>
                                             <div className={styles['hero-poster-column']}>
                                                 {
@@ -353,11 +354,34 @@ const MetaDetails = ({ urlParams, queryParams }) => {
                                                 </div>
                                             </div>
                                         </section>
-                                    </React.Fragment>
+                                        {
+                                            showListAlongside ?
+                                                streamPath !== null ?
+                                                    <StreamsList
+                                                        className={styles['streams-list']}
+                                                        streams={metaDetails.streams}
+                                                        video={video}
+                                                        type={streamPath.type}
+                                                        onEpisodeSearch={handleEpisodeSearch}
+                                                    />
+                                                    :
+                                                    <VideosList
+                                                        className={styles['videos-list']}
+                                                        metaItem={metaDetails.metaItem}
+                                                        libraryItem={metaDetails.libraryItem}
+                                                        season={season}
+                                                        selectedVideoId={metaDetails.libraryItem?.state?.video_id}
+                                                        seasonOnSelect={seasonOnSelect}
+                                                        toggleNotifications={toggleNotifications}
+                                                    />
+                                                :
+                                                null
+                                        }
+                                    </div>
                 }
                 <div className={styles['spacing']} />
                 {
-                    streamPath !== null ?
+                    streamPath !== null && !showListAlongside ?
                         <StreamsList
                             className={styles['streams-list']}
                             streams={metaDetails.streams}
@@ -366,7 +390,7 @@ const MetaDetails = ({ urlParams, queryParams }) => {
                             onEpisodeSearch={handleEpisodeSearch}
                         />
                         :
-                        metaPath !== null ?
+                        metaPath !== null && !showListAlongside ?
                             <VideosList
                                 className={styles['videos-list']}
                                 metaItem={metaDetails.metaItem}

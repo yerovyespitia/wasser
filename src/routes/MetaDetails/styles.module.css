@@ -59,6 +59,36 @@
   padding-top: var(--top-overlay-size);
   padding-bottom: var(--safe-area-inset-bottom, 0rem);
 }
+.metadetails-container .metadetails-content .details-layout {
+  display: contents;
+}
+.metadetails-container .metadetails-content .details-layout.episodes-alongside {
+  flex: 1;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: minmax(31rem, 0.9fr) minmax(38rem, 1.1fr);
+  gap: 2rem;
+  padding: 0 4rem 2rem;
+  padding-left: max(1rem, calc(4rem - var(--safe-area-inset-left)));
+}
+.metadetails-container .metadetails-content .details-layout.episodes-alongside .meta-preview {
+  min-width: 0;
+  padding: 0;
+}
+.metadetails-container .metadetails-content .details-layout.episodes-alongside .meta-preview.hero-section {
+  grid-template-columns: minmax(11rem, 15rem) minmax(0, 1fr);
+  gap: 1.5rem;
+  align-self: center;
+  align-items: center;
+}
+.metadetails-container .metadetails-content .details-layout.episodes-alongside .videos-list,
+.metadetails-container .metadetails-content .details-layout.episodes-alongside .streams-list {
+  min-width: 0;
+  min-height: 0;
+  height: 100%;
+  margin: 0;
+  border-radius: 1.5rem;
+}
 .metadetails-container .metadetails-content .vertical-nav-bar {
   flex: none;
 }
@@ -260,6 +290,31 @@
     height: 4.5rem;
   }
 }
+@media only screen and (max-width: 1100px) {
+  .metadetails-container .metadetails-content .details-layout.episodes-alongside {
+    display: flex;
+    flex-direction: column;
+    min-height: auto;
+    padding: 0;
+  }
+  .metadetails-container .metadetails-content .details-layout.episodes-alongside .meta-preview {
+    padding: 0 4rem 2rem 4rem;
+    padding-left: max(1rem, calc(4rem - var(--safe-area-inset-left)));
+  }
+  .metadetails-container .metadetails-content .details-layout.episodes-alongside .meta-preview.hero-section {
+    grid-template-columns: minmax(14rem, 19rem) minmax(0, 1fr);
+    gap: 2rem;
+    align-items: end;
+  }
+  .metadetails-container .metadetails-content .details-layout.episodes-alongside .videos-list,
+  .metadetails-container .metadetails-content .details-layout.episodes-alongside .streams-list {
+    height: auto;
+    min-height: 30rem;
+    margin-left: 60px;
+    margin-right: calc(60px - var(--scroll-bar-size));
+    border-radius: 1.5rem 1.5rem 0 0;
+  }
+}
 @media only screen and (max-width: 640px) {
   .metadetails-container .metadetails-content .meta-preview {
     padding: 0 1.5rem 2rem;
@@ -268,6 +323,21 @@
     grid-template-columns: 1fr;
     gap: 1.5rem;
     align-items: start;
+  }
+  .metadetails-container .metadetails-content .details-layout.episodes-alongside .meta-preview {
+    padding: 0 1.5rem 2rem;
+  }
+  .metadetails-container .metadetails-content .details-layout.episodes-alongside .meta-preview.hero-section {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    align-items: start;
+  }
+  .metadetails-container .metadetails-content .details-layout.episodes-alongside .videos-list,
+  .metadetails-container .metadetails-content .details-layout.episodes-alongside .streams-list {
+    min-height: 30rem;
+    margin-left: 0;
+    margin-right: 0;
+    border-radius: 1.25rem 1.25rem 0 0;
   }
   .metadetails-container .metadetails-content .meta-preview .hero-poster-column {
     justify-content: flex-start;
